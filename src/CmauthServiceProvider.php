@@ -23,8 +23,8 @@ class CmauthServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/config/cmauth.php' => config_path('cmauth.php'),
-            __DIR__.'/views/layouts/sidebar.blade.php' => base_path().'/resources/views/cmauth/sidebar.php',
-            __DIR__.'/views/layouts/footer.blade.php' => base_path().'/resources/views/cmauth/footer.php',
+            __DIR__.'/views/layouts/sidebar.blade.php' => base_path().'/resources/views/cmauth/sidebar.blade.php',
+            __DIR__.'/views/layouts/footer.blade.php' => base_path().'/resources/views/cmauth/footer.blade.php',
         ]);
 
 
