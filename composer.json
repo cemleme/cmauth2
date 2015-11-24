@@ -1,9 +1,8 @@
 {
     "name": "cemleme/cmauth",
-    "description": ":package_description",
+    "description": "cmauth laravel 5.1.11 rbac",
     "keywords": [
-        "league",
-        ":package_name"
+        "cmauth"
     ],
     "homepage": "https://github.com/Cemleme/Cmauth",
     "license": "MIT",
