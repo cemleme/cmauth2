@@ -9,8 +9,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": ":Cem Adiloglu",
-            "email": ":cemadil@gmail.com",
+            "name": "Cem Adiloglu",
+            "email": "cemadil@gmail.com",
             "role": "Developer"
         }
     ],
@@ -36,10 +36,5 @@
     },
     "scripts": {
         "test": "phpunit"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     }
 }
