@@ -2,10 +2,6 @@
 
 @section('content')
 
-	@can('CmauthAdmin')
-	<h1>hobaley</h1>
-	@endcan
-
           <!-- Small boxes (Stat box) -->
           <div class="row">
 
