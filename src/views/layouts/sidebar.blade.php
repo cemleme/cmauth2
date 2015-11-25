@@ -7,6 +7,11 @@
     <ul class="sidebar-menu">
       <li class="header"></li>
 
+      <li>
+        <a href="/">
+          <i class="fa fa-home"></i>
+        </a>
+      </li>
 
       @can('CmauthAdmin')
         <li class="treeview">
