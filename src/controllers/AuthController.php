@@ -24,7 +24,7 @@ class AuthController extends Controller {
 	}
 	
 	public function getIndex() {
-		return view("cmauth::dashboard");
+		return view("cmauth::cmauthpanel");
 	}
 	
 	public function getLogin() {
