@@ -30,6 +30,12 @@
       @endcan
 
 
+      <li>
+        <a href="/auth/logout">
+          <i class="fa fa-sign-out"></i> <span>Çıkış</span>
+        </a>
+      </li>
+
     </ul><!-- /.sidebar-menu -->
 
   </section>
