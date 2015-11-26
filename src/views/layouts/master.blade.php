@@ -39,6 +39,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+      <style>
+        .loader{
+          height:100%;
+          width:100%;
+          position:fixed;
+          left:0;
+          top:0;
+          z-index:100 !important;
+          background-color:black;
+
+          filter: alpha(opacity=75); /* internet explorer */
+          -khtml-opacity: 0.75;      /* khtml, old safari */
+          -moz-opacity: 0.75;       /* mozilla, netscape */
+          opacity: 0.75;           /* fx, safari, opera */
+        }
+
+        .spinner{
+          position:absolute;
+          left:40%;
+          top:30%;
+          z-index:110 !important;
+          color:white;
+        }
+      </style>
+
   </head>
   <!--
   BODY TAG OPTIONS:
@@ -61,6 +87,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |---------------------------------------------------------|
   -->
   <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+
+    <!-- SPINNER FOR LOADER -->
+    <div class="loader">
+      <div id="circularG" class="spinner">
+        <div id="circularG_1" class="circularG"></div>
+        <div id="circularG_2" class="circularG"></div>
+        <div id="circularG_3" class="circularG"></div>
+        <div id="circularG_4" class="circularG"></div>
+        <div id="circularG_5" class="circularG"></div>
+        <div id="circularG_6" class="circularG"></div>
+        <div id="circularG_7" class="circularG"></div>
+        <div id="circularG_8" class="circularG"></div>
+      </div> 
+    </div>
+
+
     <div class="wrapper">
 
       <!-- Main Header -->
@@ -176,6 +218,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
          fixed layout. -->
+     <script>
+        $(document).ready(function() {
+          var options={
+            html : true, 
+            placement:"auto",
+            trigger:"hover"
+            
+          }
+          $('.apop').popover(options);
+          $('.loader').hide();
+        });
+      </script>
 
       @yield('scripts-last')
   </body>
