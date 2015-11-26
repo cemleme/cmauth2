@@ -35,6 +35,8 @@ class CmauthServiceProvider extends ServiceProvider
             });
         }
 
+        $this->app->register('Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider');
+
     }
 
     /**
