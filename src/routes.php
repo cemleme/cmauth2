@@ -3,7 +3,7 @@
 Route::group(array('middleware' => ['acl:ViewLog']), function()
 {
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-}
+});
 
 Route::group(array('middleware' => ['auth']), function()
 {
