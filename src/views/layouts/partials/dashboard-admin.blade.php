@@ -21,7 +21,7 @@
 
 
     @can('AppsUsersEdit')
-    
+
 	    <div class="col-lg-3 col-xs-5">
 	      <!-- small box -->
 	      <div class="small-box bg-purple">
@@ -39,6 +39,24 @@
 
     @endcan
 
+    @can('ViewLog')
+    
+	    <div class="col-lg-3 col-xs-5">
+	      <!-- small box -->
+	      <div class="small-box bg-yellow">
+	        <div class="inner">
+	          <h3>View<br/>Logs</h3>
+	        </div>
+	        <div class="icon">
+	          <i class="fa fa-users"></i>
+	        </div>
+	        <a href="/logs" class="small-box-footer">
+	          Tıklayınız <i class="fa fa-arrow-circle-right"></i>
+	        </a>
+	      </div>
+	    </div><!-- ./col -->
+
+    @endcan
 
     @can('AppsUsersEdit')
 
