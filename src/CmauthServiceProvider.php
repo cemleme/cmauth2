@@ -36,7 +36,8 @@ class CmauthServiceProvider extends ServiceProvider
         }
 
         $this->app->register('Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider');
-
+        $this->app->register('Spatie\Backup\BackupServiceProvider');
+        
     }
 
     /**
