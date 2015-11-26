@@ -33,37 +33,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset("/admin-lte/plugins/iCheck/square/blue.css")}}" rel="stylesheet" type="text/css" />
 
 
+
+    <!-- Loader Spinner -->
+    <link href="{{ asset("/packages/spinner.css")}}" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-      <style>
-        .loader{
-          height:100%;
-          width:100%;
-          position:fixed;
-          left:0;
-          top:0;
-          z-index:100 !important;
-          background-color:black;
-
-          filter: alpha(opacity=75); /* internet explorer */
-          -khtml-opacity: 0.75;      /* khtml, old safari */
-          -moz-opacity: 0.75;       /* mozilla, netscape */
-          opacity: 0.75;           /* fx, safari, opera */
-        }
-
-        .spinner{
-          position:absolute;
-          left:40%;
-          top:30%;
-          z-index:110 !important;
-          color:white;
-        }
-      </style>
 
   </head>
   <!--
