@@ -2,6 +2,8 @@
 
 Form::macro('boxOpen', function($title, $color="info", array $formOptions = [])
 {
+	$formOptions['class'] = "form-horizontal";
+
     return "<div class='box box-$color'>
                <div class='box-header with-border'>
                  <h3 class='box-title'>$title</h3>
