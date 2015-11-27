@@ -16,6 +16,22 @@ Form::macro('boxOpen', function(array $formOptions = [], $title = "", $color="in
 
 });
 
+Form::macro('boxOpenModel', function($model, array $formOptions = [], $title = "", $color="info")
+{
+	if (!isset($formOptions['class'])) {
+		$formOptions['class'] = "form-horizontal";
+    }
+
+    return "<div class='box box-$color'>
+               <div class='box-header with-border'>
+                 <h3 class='box-title'>$title</h3>
+               </div><!-- /.box-header -->
+               <!-- form start -->".
+               Form::model($model, $formOptions).
+                 "<div class='box-body'>";
+
+});
+
 Form::macro('boxClose', function($buttonText, $color="info")
 {
     return "	</div><!-- /.box-body -->
