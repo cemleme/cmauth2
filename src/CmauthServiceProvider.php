@@ -20,6 +20,7 @@ class CmauthServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/views', 'cmauth');
         
         include __DIR__ . '/routes.php';
+        include __DIR__ . '/htmlmacros.php';
 
         $this->publishes([
             __DIR__.'/config/cmauth.php' => config_path('cmauth.php'),
@@ -37,7 +38,7 @@ class CmauthServiceProvider extends ServiceProvider
 
         $this->app->register('Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider');
         $this->app->register('Spatie\Backup\BackupServiceProvider');
-        
+
     }
 
     /**
