@@ -33,7 +33,7 @@ Form::macro('boxRow', function($label, $type = "text", $inputId = null, $placeho
             </div>";
 });
 
-Form::macro('boxTextarea', function($label, $name, $value = null; $inputId = null, $placeholder = null)
+Form::macro('boxTextarea', function($label, $name, $value = null, $inputId = null, $placeholder = null)
 {
     return "<div class='form-group'>
                 <label for='$inputId' class='col-sm-2 control-label'>$label</label>
