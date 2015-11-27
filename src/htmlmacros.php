@@ -31,7 +31,16 @@ Form::macro('boxRow', function($label, $type = "text", $inputId = null, $placeho
                   <input type='$type' class='form-control' name='$inputId' id='$inputId' placeholder='$placeholder'>
                 </div>
             </div>";
+});
 
+Form::macro('boxTextarea', function($label, $name, $value = null; $inputId = null, $placeholder = null)
+{
+    return "<div class='form-group'>
+                <label for='$inputId' class='col-sm-2 control-label'>$label</label>
+                <div class='col-sm-10'>
+                	<textarea class='form-control' name='$name' placeholder='$placeholder' cols='30' rows='3' id='inputId'>$value</textarea>
+                </div>
+            </div>";
 });
 
 Form::macro('boxDate', function($label, $value = null, $inputId = null, $placeholder = null)
@@ -44,4 +53,4 @@ Form::macro('boxDate', function($label, $value = null, $inputId = null, $placeho
             </div>";
 
 });
-                   
+                 
