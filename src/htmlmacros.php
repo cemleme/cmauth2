@@ -1,15 +1,14 @@
 <?php
 
-Form::macro('boxOpen', function($title, $color="info")
+Form::macro('boxOpen', function($title, $color="info", array $formOptions = [])
 {
     return "<div class='box box-$color'>
                <div class='box-header with-border'>
                  <h3 class='box-title'>$title</h3>
                </div><!-- /.box-header -->
-               <!-- form start -->
-               <form class='form-horizontal'>
-               	 <input name='_token' type='hidden' value='".csrf_token()."'>
-                 <div class='box-body'>";
+               <!-- form start -->".
+               Form::open($formOptions).
+                 "<div class='box-body'>";
 
 });
 
