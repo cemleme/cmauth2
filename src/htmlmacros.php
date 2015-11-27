@@ -57,9 +57,9 @@ Form::macro('boxText', function($label, $name, $value = null, $inputId = null, $
 {
     return "<div class='form-group'>
                 <label for='$inputId' class='col-sm-2 control-label'>$label</label>
-                <div class='col-sm-10'>
-                  <input type='text' class='form-control' name='$name' id='$inputId' placeholder='$placeholder' value='$value'>
-                </div>
+                <div class='col-sm-10'>".
+                	Form::text($name, $value, array('class'=>'form-control', 'placeholder'=>$placeholder, 'id' => $inputId)).
+                "</div>
             </div>";
 });
 
@@ -67,9 +67,9 @@ Form::macro('boxTextarea', function($label, $name, $value = null, $inputId = nul
 {
     return "<div class='form-group'>
                 <label for='$inputId' class='col-sm-2 control-label'>$label</label>
-                <div class='col-sm-10'>
-                	<textarea class='form-control' name='$name' placeholder='$placeholder' rows='3' id='inputId'>$value</textarea>
-                </div>
+                <div class='col-sm-10'>".
+                	Form::textarea($name, $value, array('class'=>'form-control', 'size' => '30x3', 'placeholder'=>'Duruşma Açıklama', 'id' => $inputId)).
+                "</div>
             </div>";
 });
 
@@ -77,9 +77,9 @@ Form::macro('boxDate', function($label, $name, $value = null, $inputId = null, $
 {
     return "<div class='form-group'>
                 <label for='$inputId' class='col-sm-2 control-label'>$label</label>
-                <div class='col-sm-10'>
-                  <input type='text' class='form-control date-picker' name='$name' id='$inputId' value='$value' placeholder='$placeholder'>
-                </div>
+                <div class='col-sm-10'>".
+                	Form::text($name, $value, array('class'=>'form-control date-picker', 'placeholder'=>$placeholder, 'id' => $inputId)).
+                "</div>
             </div>";
 
 });
