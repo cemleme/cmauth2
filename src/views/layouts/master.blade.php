@@ -33,7 +33,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset("/admin-lte/plugins/iCheck/square/blue.css")}}" rel="stylesheet" type="text/css" />
 
 
-
+    <!-- Date Picker -->
+    <link href="{{ asset("/packages/bootstrap-datepicker/css/datepicker.css")}}" rel="stylesheet" type="text/css" />
+    
     <!-- Loader Spinner -->
     <link href="{{ asset("/packages/spinner.css")}}" rel="stylesheet" type="text/css" />
 
@@ -193,6 +195,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Laravel Submit JS -->
      <script src="{{ asset ("/laravel_submit.js") }}" type="text/javascript"></script>
 
+    <script src="{{ asset ("/packages/bootstrap-datepicker/js/bootstrap-datepicker.js") }}" type="text/javascript"></script>
+    <script src="{{ asset ("/packages/bootstrap-datepicker/js/locales/bootstrap-datepicker.tr.js") }}" type="text/javascript"></script>
+
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
@@ -206,6 +211,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
           }
           $('.apop').popover(options);
+
+          $( ".date-picker" ).datepicker({
+              weekStart:1,
+              todayHighlight:true,
+              language:"tr",
+              format:"dd-mm-yyyy",
+              forceParse:false
+          });
+
           $('.loader').hide();
         });
       </script>
