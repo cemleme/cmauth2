@@ -12,10 +12,11 @@ class CmauthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(GateContract $gate, \Illuminate\Routing\Router $router)
+    public function boot(GateContract $gate, \Illuminate\Routing\Router $router, \Illuminate\Contracts\Http\Kernel $kernel)
     {
 
         $router->middleware("acl", \Cemleme\Cmauth\middleware\Acl::class);
+        $kernel->pushMiddleware(\Cemleme\Cmauth\middleware\SetLastActionTime::class);
 
         $this->loadViewsFrom(__DIR__.'/views', 'cmauth');
         
