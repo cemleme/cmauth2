@@ -20,5 +20,6 @@ return [
     'loginnousererror' => 'Bu şekilde bir kullanıcı bulunmamaktadır',
     'loginpwderror' => 'Kullanıcı adı veya şifre hatalı',
     'currentpwderror' => 'Mevcut şifrenizi hatalı girdiniz',
-    'ldappwdmessage' => 'LDAP bağlantısı olduğu için şifrenizi buradan değiştiremezsiniz'
+    'ldappwdmessage' => 'LDAP bağlantısı olduğu için şifrenizi buradan değiştiremezsiniz',
+    'logoutmessage' => 'Çıkış tamamlandı'
 ];

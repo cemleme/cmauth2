@@ -79,7 +79,7 @@ class AuthController extends Controller {
 	
 	public function getLogout() {
 		Auth::logout();
-		return Redirect::to('/cmauth/login')->with('message', 'You have logged out');
+		return Redirect::to('/cmauth/login')->with('message', trans("cmauth::gui.logoutmessage"));
 	}	
 	
 	public function postChangepassword(){

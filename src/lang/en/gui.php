@@ -20,5 +20,6 @@ return [
     'loginnousererror' => 'There is no such user registered to the system',
     'loginpwderror' => 'You have entered wrong username and password',
     'currentpwderror' => 'Your have entered your current password wrong',
-    'ldappwdmessage' => 'As you are connected to LDAP, you can not change your password from here.'
+    'ldappwdmessage' => 'As you are connected to LDAP, you can not change your password from here.',
+    'logoutmessage' => 'You have logged out'
 ];
