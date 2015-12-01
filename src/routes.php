@@ -4,7 +4,8 @@ Route::group(array('middleware' => ['auth', 'acl:ViewLog']), function()
 	Route::get('/mail/test', function(){
 		$name="cem";
 		$email="cem@eser.com";
-		return view('cmauth::emails.userLDAPWelcomeMail', compact('name', 'email'));
+		$token='37ff44bedbeb79f74c30e14ec9c86a459cfb0613100066464279d50e4263b9ba';
+		return view('cmauth::emails.userPasswordResetRequestMail', compact('name', 'email', 'token'));
 	});
 });
 

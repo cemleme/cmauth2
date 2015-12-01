@@ -1,25 +1,17 @@
 @extends('cmauth::emails.userMailTemplate')
 
 @section('icerikHeader')
-	Password reset request
+	{!! trans('cmauth::emails.pwdresettitle') !!}
 @stop
 
 @section('icerikUst')
-
-	Please click the button below to reset your password.
-	<br/> 
-	Please disregard this e-mail if you have not asked for password reset.
-	<br/>
-	
-	This form will expire in {{ Config::get('auth.reminder.expire', 60) }} minutes.
+	{!! trans('cmauth::emails.pwdresetheader', ['minutes' => Config::get('auth.reminder.expire', 60)]) !!}
 @stop
 
 @section('icerikDugme')
-	<a href="{{ url('password/reset/'.$token) }}" style="color: rgb(255, 255, 255); font-size: 15px; text-decoration: none; line-height: 34px; width: 100%;">Reset Password</a>
+	<a href="{{ url('password/reset/'.$token) }}" style="color: rgb(255, 255, 255); font-size: 15px; text-decoration: none; line-height: 34px; width: 100%;">{!! trans('cmauth::emails.resetpassword') !!}</a>
 @stop
 
 @section('icerikAlt')
-	If the button is not working, you can also copy the link below and paste it on your browser.
-	<br/>
-	{{ URL::to('password/reset', array($token)) }}
+	{!! trans('cmauth::emails.pwdresetfooter', ['url' => URL::to('password/reset', array($token))]) !!}
 @stop
