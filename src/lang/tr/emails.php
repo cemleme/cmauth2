@@ -3,11 +3,11 @@
 return [
 	'dear' => 'Sayın',
     
-    'emailfooter' => 'Bu e-posta '.Config::get('cmauth.apptitle').' sistemi tarafından gönderilmiştir.
+    'emailfooter' => 'Bu e-posta '.Config::get('cmauth.appfulltitle').' sistemi tarafından gönderilmiştir.
                      <br/>
                      Lütfen bu e-postayı yanıtlamayınız.',
 
-    'ldapheader' => Config::get('cmauth.apptitle').' sistemine kaydınız e-mail hesabınıza entegre edilmiştir.
+    'ldapheader' => Config::get('cmauth.appfulltitle').' sistemine kaydınız e-mail hesabınıza entegre edilmiştir.
                     <br/>
                     Sisteme <b>kullanıcı adı olarak :email e-posta adresinizi</b> ve şifresini kullanarak giriş yapabilirsiniz.',
 

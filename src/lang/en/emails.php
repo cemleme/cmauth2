@@ -3,11 +3,11 @@
 return [
 	'dear' => 'Dear',
     
-    'emailfooter' => 'This e-mail was sent by '.Config::get('cmauth.apptitle').
+    'emailfooter' => 'This e-mail was sent by '.Config::get('cmauth.appfulltitle').
                      '<br/>
                      Please do not reply this e-mail.',
 
-    'ldapheader' => 'You are registered to '.Config::get('cmauth.apptitle').
+    'ldapheader' => 'You are registered to '.Config::get('cmauth.appfulltitle').
                     '<br/>
                     You can access the system with your <b>username as :email</b>, using your e-mail password.',
 

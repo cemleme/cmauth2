@@ -10,7 +10,7 @@
 
 @section('icerikDugme')
 	<a href="{{ url('/') }}" style="color: rgb(255, 255, 255); font-size: 15px; text-decoration: none; line-height: 34px; width: 100%;">
-		{{ Config::get('cmauth.apptitle') }}
+		{{ Config::get('cmauth.appfulltitle') }}
 	</a>
 @stop
 

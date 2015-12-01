@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>{{ Config::get('cmauth.apptitle') }}</title>
+<title>{{ Config::get('cmauth.appfulltitle') }}</title>
 
 <style type="text/css">
 
@@ -116,7 +116,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 										<tr width="100%">
 											<td valign="middle" width="100%" style="text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 28px; color: white; line-height: 26px; ">
 												<!--[if !mso]><!--><span style="font-family: 'proxima_novablack', Helvetica; font-weight: normal;"><!--<![endif]-->
-												{{ Config::get('cmauth.apptitle') }}
+												{{ Config::get('cmauth.appfulltitle') }}
 												<!--[if !mso]><!--></span><!--<![endif]-->
 											</td>
 										</tr>

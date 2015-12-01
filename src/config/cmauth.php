@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'appfulltitle' => 'Page Full Title',
 	'apptitle' => 'Page Title',
 	'apptitlesub' => 'Sub',
 	'apptitlemini' => 'MN',
