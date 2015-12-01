@@ -46,7 +46,7 @@ class AuthController extends Controller {
 		if(!$user = User::where('email', Input::get('email'))->first()){
  			return Redirect::to('/cmauth/login')
 				->withInput(Input::except('password'))
-				->withErrors(['There is no such user registered to the system']);
+				->withErrors([trans("cmauth::gui.loginnousererror")]);
  		}
 		
 
@@ -73,7 +73,7 @@ class AuthController extends Controller {
 		else {
 			return Redirect::to('/cmauth/login')
 				->withInput(Input::except('password'))
-				->withErrors(['You have entered wrong username and password']);
+				->withErrors([trans("cmauth::gui.loginpwderror")]);
 		}         
 	}
 	
@@ -91,7 +91,7 @@ class AuthController extends Controller {
 
 			if (!Hash::check(Input::get('current_password'), $user->password))
 			{ 
-			   return Redirect::to('/cmauth/settings')->withErrors('Your have entered current password wrong.');
+			   return Redirect::to('/cmauth/settings')->withErrors(trans("cmauth::gui.currentpwderror"));
 			}
 
 			
@@ -111,7 +111,7 @@ class AuthController extends Controller {
 
 	public function getPassword() {
 		if(Auth::user()->ldap>0 && config('cmauth.ldap'))
-			return Redirect::to('/')->with('message', 'As you are connected to '.config('app.title', 'main'). ' domain, you can not change your password from here.');
+			return Redirect::to('/')->with('message', trans("cmauth::gui.ldappwdmessage"));
 		
 		return view('cmauth::layouts.changepassword');
 	}	

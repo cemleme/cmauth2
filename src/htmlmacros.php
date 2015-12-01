@@ -16,6 +16,17 @@ Form::macro('boxOpen', function(array $formOptions = [], $title = "", $color="in
 
 });
 
+Form::macro('boxOnlyOpen', function($title = "", $color="info")
+{
+
+    return "<div class='box box-$color'>
+               <div class='box-header with-border'>
+                 <h3 class='box-title'>$title</h3>
+               </div><!-- /.box-header -->
+               <div class='box-body'>";
+
+});
+
 Form::macro('boxOpenModel', function($model, array $formOptions = [], $title = "", $color="info")
 {
 	if (!isset($formOptions['class'])) {
@@ -29,6 +40,13 @@ Form::macro('boxOpenModel', function($model, array $formOptions = [], $title = "
                <!-- form start -->".
                Form::model($model, $formOptions).
                  "<div class='box-body'>";
+
+});
+
+Form::macro('boxOnlyClose', function($color="info")
+{
+    return "  </div><!-- /.box-body -->
+             </div><!-- /.box -->";
 
 });
 
@@ -60,6 +78,19 @@ Form::macro('boxText', function($label, $name, $value = null, $inputId = null, $
                 <div class='col-sm-10'>".
                 	Form::text($name, $value, array('class'=>'form-control', 'placeholder'=>$placeholder, 'id' => $inputId)).
                 "</div>
+            </div>";
+});
+
+Form::macro('boxCheck', function($label, $name, $value = null, $inputId = null, $placeholder = null)
+{
+    return "<div class='form-group'>
+                <div class='col-sm-offset-2 col-sm-10'>
+                  <div class='checkbox'>
+                    <label>".
+                      Form::checkbox($name, $value, true).
+                    " $label</label>
+                  </div>
+                </div>
             </div>";
 });
 

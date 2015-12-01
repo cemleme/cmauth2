@@ -64,6 +64,11 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 	    return $this->belongsToMany('Cemleme\Cmauth\models\Group','cmauth_group_user','user_id','group_id');
 	}
 
+	public function notifications()
+	{
+	    return $this->belongsToMany('Cemleme\Cmauth\models\Notification','notification_user','user_id')->withPivot('read_at');
+	}
+
 	public function getLastActivityDiffTrAttribute($date){
 		if(!$this->last_activity) return "";
  		return $this->last_activity->diffForHumans();

@@ -9,7 +9,7 @@
 
       <li>
         <a href="/">
-          <i class="fa fa-home"></i>
+          <i class="fa fa-home"></i> <span>{{ trans("cmauth::gui.home") }}</span>
         </a>
       </li>
 
@@ -32,7 +32,7 @@
 
       <li>
         <a href="/auth/logout">
-          <i class="fa fa-sign-out"></i> <span>Çıkış</span>
+          <i class="fa fa-sign-out"></i> <span>{{ trans("cmauth::gui.logout") }}</span>
         </a>
       </li>
 

@@ -1,6 +1,6 @@
 <?php
 
-Route::group(array('middleware' => ['acl:ViewLog']), function()
+Route::group(array('middleware' => ['auth', 'acl:ViewLog']), function()
 {
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
@@ -23,6 +23,18 @@ Route::group(array('middleware' => ['auth']), function()
 	Route::resource('cmauth/users', 'Cemleme\Cmauth\controllers\UsersRC');
 	Route::resource('cmauth/groups', 'Cemleme\Cmauth\controllers\GroupsRC');
 	Route::resource('cmauth/permissions', 'Cemleme\Cmauth\controllers\PermissionsRC');
+
+
+
+	Route::post('cmauth/notifications/modal', 'Cemleme\Cmauth\controllers\NotificationsController@modalRead');
+	Route::resource('cmauth/notifications', 'Cemleme\Cmauth\controllers\NotificationsController');
+	Route::put('cmauth/notifications/assign/group', 'Cemleme\Cmauth\controllers\NotificationsController@assignGroup');
+	Route::put('cmauth/notifications/assign/user', 'Cemleme\Cmauth\controllers\NotificationsController@assignUser');
+	Route::delete('cmauth/notifications/remove/user', 'Cemleme\Cmauth\controllers\NotificationsController@removeUser');
+	Route::put('cmauth/notifications/{id}/assign/all', 'Cemleme\Cmauth\controllers\NotificationsController@assignAll');
+	Route::put('cmauth/notifications/{id}/remove/all', 'Cemleme\Cmauth\controllers\NotificationsController@removeAll');
+	Route::get('/notifications/{id}', 'Cemleme\Cmauth\controllers\NotificationsController@show');
+	Route::get('/notifications', 'Cemleme\Cmauth\controllers\NotificationsController@mynotifications');
 
 });
 

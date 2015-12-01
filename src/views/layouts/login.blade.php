@@ -2,7 +2,7 @@
 
 @section('content')
   
-  <p class="login-box-msg">Sign in to start your session</p>
+  <p class="login-box-msg">{{ trans("cmauth::gui.loginheader") }}</p>
   
   {!! Form::open(array('url'=>'/auth/login', 'class'=>'login-form')) !!}
     <div class="form-group has-feedback">
@@ -17,16 +17,16 @@
       <div class="col-xs-8">
         <div class="checkbox icheck">
           <label>
-            <input type="checkbox" name="remember"> Remember Me
+            <input type="checkbox" name="remember"> {{ trans("cmauth::gui.rememberme") }}
           </label>
         </div>
       </div><!-- /.col -->
       <div class="col-xs-4">
-        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans("cmauth::gui.login") }}</button>
       </div><!-- /.col -->
     </div>
   </form>
 
-  <a href="/auth/resetrequest">I forgot my password</a><br>
+  <a href="/auth/resetrequest">{{ trans("cmauth::gui.forgotpwd") }}</a><br>
 
 @endsection

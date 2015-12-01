@@ -107,6 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
 
+              @include('cmauth::layouts.notification_header')
 
               <!-- User Account Menu -->
               <li class="dropdown user user-menu">
@@ -120,16 +121,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li class="user-header">
                     <p>
                       {{ Auth::user()->name }} - {{ Auth::user()->email }}
-                      <small>Member since {{ Auth::user()->created_at }}</small>
+                      <small>{{ trans("cmauth::gui.membersince") }} {{ Auth::user()->created_at }}</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="/auth/password" class="btn btn-default btn-flat">Change Password</a>
+                      <a href="/auth/password" class="btn btn-default btn-flat">{{ trans("cmauth::gui.changepwd") }}</a>
                     </div>
                     <div class="pull-right">
-                      <a href="/auth/logout" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="/auth/logout" class="btn btn-default btn-flat">{{ trans("cmauth::gui.logout") }}</a>
                     </div>
                   </li>
                 </ul>
@@ -166,6 +167,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="alert alert-danger">
               <span>{{$errors->first()}}</span>
           </div>
+        @endif
+
+
+        @if($modal_notifications->count())
+          @include('cmauth::layouts.notification_modal')
         @endif
 
         <!-- Main content -->
@@ -221,6 +227,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           });
 
           $('.loader').hide();
+
+          $('#notificationsModal').modal();
+
+          $('#notificationModalKapa').click(function(){
+              $.ajax({
+                url: '/cmauth/notifications/modal',
+                type:'POST',
+                data: {'_token' : $('meta[name="_token"]').attr('content')},
+                success: function(data){
+                }
+              });
+          });
         });
       </script>
 
