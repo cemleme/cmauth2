@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-<title>{{ Config::get('app.title') }}</title>
+<meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>{{ Config::get('cmauth.apptitle') }}</title>
 
 <style type="text/css">
 
@@ -116,7 +116,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 										<tr width="100%">
 											<td valign="middle" width="100%" style="text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 28px; color: white; line-height: 26px; ">
 												<!--[if !mso]><!--><span style="font-family: 'proxima_novablack', Helvetica; font-weight: normal;"><!--<![endif]-->
-												{{ Config::get('app.title') }}
+												{{ Config::get('cmauth.apptitle') }}
 												<!--[if !mso]><!--></span><!--<![endif]-->
 											</td>
 										</tr>
@@ -245,7 +245,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 									<table width="540" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter2">
 										<tr width="100%">
 											<td valign="middle" width="100%" style="text-align: left; font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: rgb(63, 67, 69); line-height: 24px;">
-												<!--[if !mso]><!--><span style="font-family: 'proxima_nova_rgregular', Helvetica; font-weight: normal;"><!--<![endif]-->	
+												<!--[if !mso]><!--><span style="font-family: 'proxima_nova_rgregular', Helvetica; font-weight: normal; word-break: break-all;"><!--<![endif]-->	
 
 													@yield('icerikAlt')
 													<br/><br/>
@@ -265,8 +265,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 									<table width="540" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: left; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter2">
 										<tr width="100%">
 											<td width="100%" height="70" style="text-align: left; font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: white; line-height: 24px;">
-												This e-mail was sent by {{ Config::get('app.title') }}.<br/>
-												Please do not reply this e-mail.
+												{!! trans('cmauth::emails.emailfooter') !!}
 											</td>
 										</tr>
 									</table>

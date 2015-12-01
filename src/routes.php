@@ -1,4 +1,12 @@
 <?php
+Route::group(array('middleware' => ['auth', 'acl:ViewLog']), function()
+{
+	Route::get('/mail/test', function(){
+		$name="cem";
+		$email="cem@eser.com";
+		return view('cmauth::emails.userLDAPWelcomeMail', compact('name', 'email'));
+	});
+});
 
 Route::group(array('middleware' => ['auth', 'acl:ViewLog']), function()
 {
