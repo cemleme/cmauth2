@@ -7,8 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller {
 	
-	protected $subject = 'Password Reset Requested';
-	protected $redirectPath = "/";
+	protected $subject = trans('cmauth::emails.subjectpwdreset');
 
 	use ResetsPasswords;
 	

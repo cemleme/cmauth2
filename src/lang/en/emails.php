@@ -27,5 +27,15 @@ return [
 
     'resetpassword' => 'Reset Password',
 
-    'pwdresettitle' => 'Password Reset Request'           
+    'pwdresettitle' => 'Password Reset Request',
+
+    'subjectldap' => Config::get('cmauth.appfulltitle').' access information',
+
+    'subjectwelcome' => 'Welcome to '.Config::get('cmauth.appfulltitle'),
+
+    'subjectnewpassword' => Config::get('cmauth.appfulltitle').' - New Password',
+
+    'subjectpwdreset' => 'Password Reset Requested'
+
+
 ];

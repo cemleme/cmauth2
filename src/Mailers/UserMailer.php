@@ -8,7 +8,7 @@ class UserMailer extends Mailer{
 	public function welcomeLDAP(User $user)
 	{
 		$view = "cmauth::emails.userLDAPWelcomeMail";
-		$subject=Config::get('app.title')." access information";
+		$subject = trans('cmauth::emails.subjectldap');
 
 		return $this->sendTo($user, $subject, $view);
 	}
@@ -16,7 +16,7 @@ class UserMailer extends Mailer{
 	public function welcome(User $user, $password)
 	{
 		$view = "cmauth::emails.userWelcomeMail";
-		$subject='Welcome to '.Config::get('app.title');
+		$subject = trans('cmauth::emails.subjectwelcome');
 
 		$data['password']=$password;
 
@@ -26,7 +26,7 @@ class UserMailer extends Mailer{
 	public function newPassword(User $user, $password)
 	{
 		$view = "cmauth::emails.userNewPasswordMailByAdmin";
-		$subject=Config::get('app.title').' - New Password';
+		$subject = trans('cmauth::emails.subjectnewpassword');
 
 		$data['password']=$password;
 

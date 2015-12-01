@@ -27,5 +27,13 @@ return [
 
     'resetpassword' => 'Şifreyi Sıfırla',
 
-    'pwdresettitle' => 'Şifre Sıfırlama Talebi'      
+    'pwdresettitle' => 'Şifre Sıfırlama Talebi',
+
+    'subjectldap' => Config::get('cmauth.appfulltitle').' Erişim Bilgilendirmesi',
+
+    'subjectwelcome' => Config::get('cmauth.appfulltitle').' - Hoşgeldiniz',
+
+    'subjectnewpassword' => Config::get('cmauth.appfulltitle').' - Yeni Şifre',
+
+    'subjectpwdreset' => 'Şifre Sıfırlama Talep Edildi'   
 ];
