@@ -42,6 +42,7 @@ Form::macro('box', function(array $options = [], array $formOptions = [])
       $options['urlColor'] = "success";
     }
 
+
     $html = "<div class='box box-".$options['color']."'>";
 
     if (!isset($options['noheader'])) {
@@ -56,6 +57,11 @@ Form::macro('box', function(array $options = [], array $formOptions = [])
     }
     
     if (!empty($formOptions)) {
+      
+      if (!isset($formOptions['class'])) {
+        $formOptions['class'] = "form-horizontal";
+      }
+      
       $html .= "<!-- form start -->".
               Form::open($formOptions);
     }
