@@ -26,10 +26,17 @@ class CmauthServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/lang', 'cmauth');
 
         $this->publishes([
-            __DIR__.'/config/cmauth.php' => config_path('cmauth.php'),
+            __DIR__.'/config/cmauth.php' => config_path('cmauth.php')
+        ], 'config');
+
+        $this->publishes([
             __DIR__.'/views/layouts/sidebar.blade.php' => base_path().'/resources/views/cmauth/sidebar.blade.php',
-            __DIR__.'/views/layouts/footer.blade.php' => base_path().'/resources/views/cmauth/footer.blade.php',
-        ]);
+            __DIR__.'/views/layouts/footer.blade.php' => base_path().'/resources/views/cmauth/footer.blade.php'
+        ], 'gui');
+
+        $this->publishes([
+        __DIR__.'/migrations/' => database_path('migrations')
+        ], 'migrations');
 
 
         // Dynamically register permissions with Laravel's Gate.
