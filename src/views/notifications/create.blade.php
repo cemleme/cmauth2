@@ -7,7 +7,7 @@
     {!! Form::boxText("Subject", "subject") !!}
     {!! Form::boxTextarea("Body", "body") !!}
     {!! Form::boxCheck("Show Modal", "showmodal") !!}
-{!! Form::boxClose("Save") !!}
+{!! Form::boxClose(["buttonText" => "Save"]) !!}
 
 
 @endsection
