@@ -55,7 +55,7 @@ Form::macro('box', function(array $options = [], array $formOptions = [])
       $html .= "</div><!-- /.box-header -->";
     }
     
-    if (!isset($options['noform'])) {
+    if (!empty($formOptions)) {
       $html .= "<!-- form start -->".
               Form::open($formOptions);
     }
