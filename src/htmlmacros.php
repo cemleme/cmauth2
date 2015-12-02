@@ -27,10 +27,49 @@ Form::macro('boxOnlyOpen', function($title = "", $color="info")
 
 });
 
+Form::macro('box', function(array $options = [], array $formOptions = [])
+{
+    if (!isset($options['color'])) {
+      $options['color'] = "info";
+    }
+    if (!isset($options['title'])) {
+      $options['title'] = "";
+    }    
+    if (!isset($options['url'])) {
+      $options['url'] = "#";
+    } 
+    if (!isset($options['urlColor'])) {
+      $options['urlColor'] = "success";
+    }
+
+    $html = "<div class='box box-".$options['color']."'>";
+
+    if (!isset($options['noheader'])) {
+      $html .= "<div class='box-header with-border'>
+                 <h3 class='box-title'>".$options['title']."</h3>";
+
+      if (isset($options['urlText'])) {           
+        $html .=   "<div class='pull-right'><a href='".$options['url']."' class='btn btn-".$options['urlColor']."'>".$options['urlText']."</a></div>";
+      }
+
+      $html .= "</div><!-- /.box-header -->";
+    }
+    
+    if (!isset($options['noform'])) {
+      $html .= "<!-- form start -->".
+              Form::open($formOptions);
+    }
+
+    $html .= "<div class='box-body'>";
+
+    return $html;
+
+});
+
 Form::macro('boxOpenModel', function($model, array $formOptions = [], $title = "", $color="info")
 {
-	if (!isset($formOptions['class'])) {
-		$formOptions['class'] = "form-horizontal";
+	  if (!isset($formOptions['class'])) {
+		  $formOptions['class'] = "form-horizontal";
     }
 
     return "<div class='box box-$color'>
@@ -50,15 +89,24 @@ Form::macro('boxOnlyClose', function($color="info")
 
 });
 
-Form::macro('boxClose', function($buttonText, $color="info")
+Form::macro('boxClose', function(array $options = [])
 {
-    return "	</div><!-- /.box-body -->
-                 <div class='box-footer'>
-                   <button type='submit' class='btn btn-$color pull-right'>$buttonText</button>
-                 </div><!-- /.box-footer -->
-               </form>
-             </div><!-- /.box -->";
+    if (!isset($options['color'])) {
+      $options['color'] = "info";
+    }
 
+    $html = "</div><!-- /.box-body -->";
+
+    if (isset($options['buttonText'])) {
+      $html .= " <div class='box-footer'>
+                   <button type='submit' class='btn btn-".$options['color']." pull-right'>".$options['buttonText']."</button>
+                 </div><!-- /.box-footer -->
+               </form>";
+    }
+
+    $html .= "</div><!-- /.box -->";
+
+    return $html;
 });
 
 Form::macro('boxRow', function($label, $type = "text", $inputId = null, $placeholder = null)
