@@ -16,7 +16,7 @@ class PasswordController extends Controller {
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 		$this->middleware('guest');
-		$this->$subject = trans("cmauth::emails.subjectpwdreset");
+		$this->subject = trans("cmauth::emails.subjectpwdreset");
 	}
 
 	public function getReset($token = null)
