@@ -15,6 +15,7 @@ return [
     'request' => 'Request',
     'reset' => 'Reset',
     'email' => 'E-mail',
+    'password' => 'Password',
     'newpwd' => 'New Password',
     'confirmpwd' => 'Confirm Password',
     'loginnousererror' => 'There is no such user registered to the system',

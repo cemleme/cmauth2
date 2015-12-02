@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller {
 	
-	protected $subject = trans('cmauth::emails.subjectpwdreset');
+	protected $subject = "";
 
 	use ResetsPasswords;
 	
@@ -16,6 +16,7 @@ class PasswordController extends Controller {
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 		$this->middleware('guest');
+		$this->$subject = trans("cmauth::emails.subjectpwdreset");
 	}
 
 	public function getReset($token = null)

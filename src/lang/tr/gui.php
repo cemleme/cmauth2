@@ -15,6 +15,7 @@ return [
     'request' => 'Talep Et',
     'reset' => 'Sıfırla',
     'email' => 'E-posta',
+    'password' => 'Şifre',
     'newpwd' => 'Yeni Şifre',
     'confirmpwd' => 'Şifreyi Tekrar Giriniz',
     'loginnousererror' => 'Bu şekilde bir kullanıcı bulunmamaktadır',
