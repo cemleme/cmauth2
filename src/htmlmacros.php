@@ -61,7 +61,7 @@ Form::macro('box', function(array $options = [], array $formOptions = [])
       if (!isset($formOptions['class'])) {
         $formOptions['class'] = "form-horizontal";
       }
-      
+
       $html .= "<!-- form start -->".
               Form::open($formOptions);
     }
@@ -153,7 +153,7 @@ Form::macro('boxTextarea', function($label, $name, $value = null, $inputId = nul
     return "<div class='form-group'>
                 <label for='$inputId' class='col-sm-2 control-label'>$label</label>
                 <div class='col-sm-10'>".
-                	Form::textarea($name, $value, array('class'=>'form-control', 'size' => '30x3', 'placeholder'=>'Duruşma Açıklama', 'id' => $inputId)).
+                	Form::textarea($name, $value, array('class'=>'form-control', 'size' => '30x3', 'placeholder'=>$placeholder, 'id' => $inputId)).
                 "</div>
             </div>";
 });
