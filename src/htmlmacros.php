@@ -48,9 +48,10 @@ Form::macro('box', function(array $options = [], array $formOptions = [])
     if (!isset($options['noheader'])) {
       $html .= "<div class='box-header with-border'>
                  <h3 class='box-title'>".$options['title']."</h3>";
-
-      if (isset($options['urlText'])) {           
-        $html .=   "<div class='pull-right'><a href='".$options['url']."' class='btn btn-".$options['urlColor']."'>".$options['urlText']."</a></div>";
+      if (!isset($options['urlAuth']) || can($options['urlAuth'])) {             
+        if (isset($options['urlText'])) {           
+          $html .=   "<div class='pull-right'><a href='".$options['url']."' class='btn btn-".$options['urlColor']."'>".$options['urlText']."</a></div>";
+        }
       }
 
       $html .= "</div><!-- /.box-header -->";
